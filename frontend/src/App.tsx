@@ -7,22 +7,30 @@ import Transact from './components/Transact'
 import { useAlgoWallet } from './hooks/useAlgoWalletProvider'
 import { getAlgodConfigFromViteEnvironment } from './utils/network/getAlgoClientConfigs'
 
+enum AuctionState {
+  Pending,
+  Created,
+  Started,
+  Ended,
+}
+
 export default function App() {
   const [openWalletModal, setOpenWalletModal] = useState<boolean>(false)
   const [openDemoModal, setOpenDemoModal] = useState<boolean>(false)
   const [appCallsDemoModal, setAppCallsDemoModal] = useState<boolean>(false)
+  const [auctionState, setAuctionState] = useState<AuctionState>(AuctionState.Pending)
   const { activeAddress } = useWallet()
 
   const toggleWalletModal = () => {
     setOpenWalletModal(!openWalletModal)
   }
 
-  const toggleDemoModal = () => {
-    setOpenDemoModal(!openDemoModal)
+  const createApp = () => {
+    setAuctionState(AuctionState.Created)
   }
 
-  const toggleAppCallsModal = () => {
-    setAppCallsDemoModal(!appCallsDemoModal)
+  const startAuction = () => {
+    setAuctionState(AuctionState.Started)
   }
 
   const algodConfig = getAlgodConfigFromViteEnvironment()
@@ -49,31 +57,59 @@ export default function App() {
               </p>
 
               <div className="grid">
-                <a
-                  data-test-id="getting-started"
-                  className="btn btn-primary m-2"
-                  target="_blank"
-                  href="https://github.com/algorandfoundation/algokit-cli"
-                >
-                  Getting started
-                </a>
-
-                <div className="divider" />
                 <button data-test-id="connect-wallet" className="btn m-2" onClick={toggleWalletModal}>
                   Wallet Connection
                 </button>
 
-                {activeAddress && (
-                  <button className="btn m-2" onClick={toggleDemoModal}>
-                    Transactions demo
+                {activeAddress && auctionState === AuctionState.Pending && (
+                  <button className="btn m-2" onClick={createApp}>
+                    Create App
                   </button>
                 )}
 
-                {activeAddress && (
-                  <button className="btn m-2" onClick={toggleAppCallsModal}>
-                    Contract interactions demo
+                {activeAddress && auctionState === AuctionState.Created && (
+                  <label htmlFor="asa" className="label m-2">
+                    Asset ID
+                  </label>
+                )}
+                {activeAddress && auctionState === AuctionState.Created && (
+                  <input type="number" id="asa" value="0" className="input input-bordered" />
+                )}
+
+                {activeAddress && auctionState === AuctionState.Created && (
+                  <label htmlFor="asa-amount" className="label m-2">
+                    Asset Amount
+                  </label>
+                )}
+                {activeAddress && auctionState === AuctionState.Created && (
+                  <input type="number" id="asa-amount" value="0" className="input input-bordered" />
+                )}
+
+                {activeAddress && auctionState === AuctionState.Created && (
+                  <label htmlFor="start" className="label m-2">
+                    Start Amount
+                  </label>
+                )}
+                {activeAddress && auctionState === AuctionState.Created && (
+                  <input type="number" id="start" value="0" className="input input-bordered" />
+                )}
+
+                {activeAddress && auctionState === AuctionState.Created && (
+                  <button className="btn m-2" onClick={startAuction}>
+                    Start Auction
                   </button>
                 )}
+
+                {activeAddress && auctionState === AuctionState.Started && (
+                  <label htmlFor="bid" className="label m-2">
+                    Bid Amount
+                  </label>
+                )}
+                {activeAddress && auctionState === AuctionState.Started && (
+                  <input type="number" id="bid" value="0" className="input input-bordered" />
+                )}
+
+                {activeAddress && auctionState === AuctionState.Started && <button className="btn m-2">Bid</button>}
               </div>
 
               <ConnectWallet openModal={openWalletModal} closeModal={toggleWalletModal} />
