@@ -3,7 +3,7 @@ import pyteal as pt
 
 
 class AuctionState:
-    highest_bidder = beaker.GlobalStateValue(
+    previous_bidder = beaker.GlobalStateValue(
         stack_type=pt.TealType.bytes,
         default=pt.Bytes(""),
         descr="Address of the highest bidder",
@@ -15,7 +15,7 @@ class AuctionState:
         descr="Timestamp of the end of the auction",
     )
 
-    highest_bid = beaker.GlobalStateValue(
+    previous_bid = beaker.GlobalStateValue(
         stack_type=pt.TealType.uint64,
         default=pt.Int(0),
         descr="Amount of the highest bid (uALGO)",
@@ -79,7 +79,7 @@ def start_auction(
         # Set global state
         app.state.asa_amt.set(axfer.get().asset_amount()),
         app.state.auction_end.set(pt.Global.latest_timestamp() + length.get()),
-        app.state.highest_bid.set(starting_price.get()),
+        app.state.previous_bid.set(starting_price.get()),
     )
 
 
@@ -101,17 +101,17 @@ def bid(payment: pt.abi.PaymentTransaction, previous_bidder: pt.abi.Account) -> 
         # Ensure auction hasn't ended
         pt.Assert(pt.Global.latest_timestamp() < app.state.auction_end.get()),
         # Verify payment transaction
-        pt.Assert(payment.get().amount() > app.state.highest_bid.get()),
+        pt.Assert(payment.get().amount() > app.state.previous_bid.get()),
         pt.Assert(pt.Txn.sender() == payment.get().sender()),
         pt.Assert(payment.get().receiver() == pt.Global.current_application_address()),
         # Return previous bid if there was one
         pt.If(
-            app.state.highest_bidder.get() != pt.Bytes(""),
-            pay(app.state.highest_bidder.get(), app.state.highest_bid.get()),
+            app.state.previous_bidder.get() != pt.Bytes(""),
+            pay(app.state.previous_bidder.get(), app.state.previous_bid.get()),
         ),
         # Set global state
-        app.state.highest_bid.set(payment.get().amount()),
-        app.state.highest_bidder.set(payment.get().sender()),
+        app.state.previous_bid.set(payment.get().amount()),
+        app.state.previous_bidder.set(payment.get().sender()),
     )
 
 
@@ -120,7 +120,7 @@ def claim_bid() -> pt.Expr:
     return pt.Seq(
         # Auction end check is commented out for automated testing
         # pt.Assert(pt.Global.latest_timestamp() > app.state.auction_end.get()),
-        pay(pt.Global.creator_address(), app.state.highest_bid.get()),
+        pay(pt.Global.creator_address(), app.state.previous_bid.get()),
     )
 
 
@@ -136,7 +136,7 @@ def claim_asset(asset: pt.abi.Asset, close_to_account: pt.abi.Account) -> pt.Exp
                 pt.TxnField.fee: pt.Int(0),  # cover fee with outer txn
                 pt.TxnField.xfer_asset: app.state.asa,
                 pt.TxnField.asset_amount: app.state.asa_amt,
-                pt.TxnField.asset_receiver: app.state.highest_bidder,
+                pt.TxnField.asset_receiver: app.state.previous_bidder,
                 pt.TxnField.asset_close_to: close_to_account.address(),
             }
         ),
