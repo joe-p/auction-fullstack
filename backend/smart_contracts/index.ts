@@ -1,6 +1,6 @@
 import { consoleLogger } from '@algorandfoundation/algokit-utils/types/logging'
 import * as algokit from '@algorandfoundation/algokit-utils'
-import { deploy as AuctionDeployer } from './hello_world/deploy-config'
+import { deploy as AuctionDeployer } from './auction/deploy-config'
 
 const contractDeployers = [AuctionDeployer]
 
