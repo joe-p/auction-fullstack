@@ -1,6 +1,6 @@
 import { DeflyWalletConnect } from '@blockshake/defly-connect'
 import { PeraWalletConnect } from '@perawallet/connect'
-import { AlgodClientOptions, defly, exodus, kmd, pera, PROVIDER_ID, reconnectProviders, WalletClient } from '@txnlab/use-wallet'
+import { AlgodClientOptions, defly, kmd, pera, PROVIDER_ID, reconnectProviders, WalletClient } from '@txnlab/use-wallet'
 import algosdk from 'algosdk'
 import { useEffect } from 'react'
 
@@ -10,7 +10,6 @@ type SupportedProviders = Partial<{
   myalgo: WalletClient | null
   algosigner: WalletClient | null
   defly: WalletClient | null // ok
-  exodus: WalletClient | null // ok
   walletconnect: WalletClient | null
   mnemonic: WalletClient | null
 }>
@@ -19,7 +18,7 @@ let providerIds: PROVIDER_ID[] = []
 if (import.meta.env.VITE_ALGOD_NETWORK === '') {
   providerIds.push(PROVIDER_ID.KMD)
 } else {
-  providerIds = [PROVIDER_ID.PERA, PROVIDER_ID.DEFLY, PROVIDER_ID.EXODUS]
+  providerIds = [PROVIDER_ID.PERA, PROVIDER_ID.DEFLY]
 }
 const walletProviders: Partial<SupportedProviders> = {}
 
@@ -49,14 +48,6 @@ export function useAlgoWallet(context: { autoConnect: boolean; network: string; 
           walletProviders[id] = await defly.init({
             algosdkStatic: algosdk,
             clientStatic: DeflyWalletConnect,
-            algodOptions: algodOptions,
-            network: network,
-          })
-          break
-
-        case PROVIDER_ID.EXODUS:
-          walletProviders[id] = await exodus.init({
-            algosdkStatic: algosdk,
             algodOptions: algodOptions,
             network: network,
           })
