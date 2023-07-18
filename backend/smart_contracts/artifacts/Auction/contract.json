@@ -39,10 +39,6 @@
                 {
                     "type": "pay",
                     "name": "payment"
-                },
-                {
-                    "type": "account",
-                    "name": "previous_bidder"
                 }
             ],
             "returns": {
@@ -50,7 +46,7 @@
             }
         },
         {
-            "name": "claim_bid",
+            "name": "claim_bids",
             "args": [],
             "returns": {
                 "type": "void"

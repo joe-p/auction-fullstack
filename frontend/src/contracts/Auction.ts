@@ -36,12 +36,12 @@ export const APP_SPEC: AppSpec = {
         "no_op": "CALL"
       }
     },
-    "bid(pay,account)void": {
+    "bid(pay)void": {
       "call_config": {
         "no_op": "CALL"
       }
     },
-    "claim_bid()void": {
+    "claim_bids()void": {
       "call_config": {
         "no_op": "CALL"
       }
@@ -58,7 +58,7 @@ export const APP_SPEC: AppSpec = {
     }
   },
   "source": {
-    "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMSA0CmJ5dGVjYmxvY2sgMHg2ODY5Njc2ODY1NzM3NDVmNjI2OTY0IDB4NjE3MzYxIDB4Njg2OTY3Njg2NTczNzQ1ZjYyNjk2NDY0NjU3MiAweDYxNzU2Mzc0Njk2ZjZlNWY2NTZlNjQgMHg2MTczNjE1ZjYxNmQ3NCAweAp0eG4gTnVtQXBwQXJncwppbnRjXzAgLy8gMAo9PQpibnogbWFpbl9sMTQKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHgyODI2YjIwMiAvLyAib3B0X2ludG9fYXNzZXQoYXNzZXQpdm9pZCIKPT0KYm56IG1haW5fbDEzCnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4ZjBhYTcwMjMgLy8gInN0YXJ0X2F1Y3Rpb24odWludDY0LHVpbnQ2NCxheGZlcil2b2lkIgo9PQpibnogbWFpbl9sMTIKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHgzOTA0MmFlZSAvLyAiYmlkKHBheSxhY2NvdW50KXZvaWQiCj09CmJueiBtYWluX2wxMQp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweGI1ODkwNjg2IC8vICJjbGFpbV9iaWQoKXZvaWQiCj09CmJueiBtYWluX2wxMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAwCnB1c2hieXRlcyAweGM5MDEyODMxIC8vICJjbGFpbV9hc3NldChhc3NldCxhY2NvdW50KXZvaWQiCj09CmJueiBtYWluX2w5CnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4MjQzNzhkM2MgLy8gImRlbGV0ZSgpdm9pZCIKPT0KYm56IG1haW5fbDgKZXJyCm1haW5fbDg6CnR4biBPbkNvbXBsZXRpb24KcHVzaGludCA1IC8vIERlbGV0ZUFwcGxpY2F0aW9uCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIGRlbGV0ZWNhc3Rlcl8xMwppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sOToKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQomJgphc3NlcnQKY2FsbHN1YiBjbGFpbWFzc2V0Y2FzdGVyXzEyCmludGNfMSAvLyAxCnJldHVybgptYWluX2wxMDoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQomJgphc3NlcnQKY2FsbHN1YiBjbGFpbWJpZGNhc3Rlcl8xMQppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTE6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgYmlkY2FzdGVyXzEwCmludGNfMSAvLyAxCnJldHVybgptYWluX2wxMjoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQomJgphc3NlcnQKY2FsbHN1YiBzdGFydGF1Y3Rpb25jYXN0ZXJfOQppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTM6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgb3B0aW50b2Fzc2V0Y2FzdGVyXzgKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDE0Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CmJueiBtYWluX2wxNgplcnIKbWFpbl9sMTY6CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCj09CmFzc2VydApjYWxsc3ViIGNyZWF0ZV8wCmludGNfMSAvLyAxCnJldHVybgoKLy8gY3JlYXRlCmNyZWF0ZV8wOgpwcm90byAwIDAKYnl0ZWNfMSAvLyAiYXNhIgppbnRjXzAgLy8gMAphcHBfZ2xvYmFsX3B1dApieXRlYyA0IC8vICJhc2FfYW10IgppbnRjXzAgLy8gMAphcHBfZ2xvYmFsX3B1dApieXRlY18zIC8vICJhdWN0aW9uX2VuZCIKaW50Y18wIC8vIDAKYXBwX2dsb2JhbF9wdXQKYnl0ZWNfMCAvLyAiaGlnaGVzdF9iaWQiCmludGNfMCAvLyAwCmFwcF9nbG9iYWxfcHV0CmJ5dGVjXzIgLy8gImhpZ2hlc3RfYmlkZGVyIgpieXRlYyA1IC8vICIiCmFwcF9nbG9iYWxfcHV0CnJldHN1YgoKLy8gb3B0X2ludG9fYXNzZXQKb3B0aW50b2Fzc2V0XzE6CnByb3RvIDEgMAp0eG4gU2VuZGVyCmdsb2JhbCBDcmVhdG9yQWRkcmVzcwo9PQovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CmJ5dGVjXzEgLy8gImFzYSIKYXBwX2dsb2JhbF9nZXQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmJ5dGVjXzEgLy8gImFzYSIKZnJhbWVfZGlnIC0xCnR4bmFzIEFzc2V0cwphcHBfZ2xvYmFsX3B1dAppdHhuX2JlZ2luCmludGNfMiAvLyBheGZlcgppdHhuX2ZpZWxkIFR5cGVFbnVtCmludGNfMCAvLyAwCml0eG5fZmllbGQgRmVlCmdsb2JhbCBDdXJyZW50QXBwbGljYXRpb25BZGRyZXNzCml0eG5fZmllbGQgQXNzZXRSZWNlaXZlcgpmcmFtZV9kaWcgLTEKdHhuYXMgQXNzZXRzCml0eG5fZmllbGQgWGZlckFzc2V0CmludGNfMCAvLyAwCml0eG5fZmllbGQgQXNzZXRBbW91bnQKaXR4bl9zdWJtaXQKcmV0c3ViCgovLyBzdGFydF9hdWN0aW9uCnN0YXJ0YXVjdGlvbl8yOgpwcm90byAzIDAKdHhuIFNlbmRlcgpnbG9iYWwgQ3JlYXRvckFkZHJlc3MKPT0KLy8gdW5hdXRob3JpemVkCmFzc2VydApieXRlY18zIC8vICJhdWN0aW9uX2VuZCIKYXBwX2dsb2JhbF9nZXQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmZyYW1lX2RpZyAtMQpndHhucyBBc3NldFJlY2VpdmVyCmdsb2JhbCBDdXJyZW50QXBwbGljYXRpb25BZGRyZXNzCj09CmFzc2VydApmcmFtZV9kaWcgLTEKZ3R4bnMgWGZlckFzc2V0CmJ5dGVjXzEgLy8gImFzYSIKYXBwX2dsb2JhbF9nZXQKPT0KYXNzZXJ0CmJ5dGVjIDQgLy8gImFzYV9hbXQiCmZyYW1lX2RpZyAtMQpndHhucyBBc3NldEFtb3VudAphcHBfZ2xvYmFsX3B1dApieXRlY18zIC8vICJhdWN0aW9uX2VuZCIKZ2xvYmFsIExhdGVzdFRpbWVzdGFtcApmcmFtZV9kaWcgLTIKKwphcHBfZ2xvYmFsX3B1dApieXRlY18wIC8vICJoaWdoZXN0X2JpZCIKZnJhbWVfZGlnIC0zCmFwcF9nbG9iYWxfcHV0CnJldHN1YgoKLy8gcGF5CnBheV8zOgpwcm90byAyIDAKaXR4bl9iZWdpbgppbnRjXzEgLy8gcGF5Cml0eG5fZmllbGQgVHlwZUVudW0KZnJhbWVfZGlnIC0yCml0eG5fZmllbGQgUmVjZWl2ZXIKZnJhbWVfZGlnIC0xCml0eG5fZmllbGQgQW1vdW50CmludGNfMCAvLyAwCml0eG5fZmllbGQgRmVlCml0eG5fc3VibWl0CnJldHN1YgoKLy8gYmlkCmJpZF80Ogpwcm90byAyIDAKZ2xvYmFsIExhdGVzdFRpbWVzdGFtcApieXRlY18zIC8vICJhdWN0aW9uX2VuZCIKYXBwX2dsb2JhbF9nZXQKPAphc3NlcnQKZnJhbWVfZGlnIC0yCmd0eG5zIEFtb3VudApieXRlY18wIC8vICJoaWdoZXN0X2JpZCIKYXBwX2dsb2JhbF9nZXQKPgphc3NlcnQKZnJhbWVfZGlnIC0yCmd0eG5zIFNlbmRlcgp0eG4gU2VuZGVyCj09CmFzc2VydApmcmFtZV9kaWcgLTIKZ3R4bnMgUmVjZWl2ZXIKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKPT0KYXNzZXJ0CmJ5dGVjXzIgLy8gImhpZ2hlc3RfYmlkZGVyIgphcHBfZ2xvYmFsX2dldApieXRlYyA1IC8vICIiCiE9CmJ6IGJpZF80X2wyCmJ5dGVjXzIgLy8gImhpZ2hlc3RfYmlkZGVyIgphcHBfZ2xvYmFsX2dldApieXRlY18wIC8vICJoaWdoZXN0X2JpZCIKYXBwX2dsb2JhbF9nZXQKY2FsbHN1YiBwYXlfMwpiaWRfNF9sMjoKYnl0ZWNfMCAvLyAiaGlnaGVzdF9iaWQiCmZyYW1lX2RpZyAtMgpndHhucyBBbW91bnQKYXBwX2dsb2JhbF9wdXQKYnl0ZWNfMiAvLyAiaGlnaGVzdF9iaWRkZXIiCmZyYW1lX2RpZyAtMgpndHhucyBTZW5kZXIKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBjbGFpbV9iaWQKY2xhaW1iaWRfNToKcHJvdG8gMCAwCmdsb2JhbCBDcmVhdG9yQWRkcmVzcwpieXRlY18wIC8vICJoaWdoZXN0X2JpZCIKYXBwX2dsb2JhbF9nZXQKY2FsbHN1YiBwYXlfMwpyZXRzdWIKCi8vIGNsYWltX2Fzc2V0CmNsYWltYXNzZXRfNjoKcHJvdG8gMiAwCml0eG5fYmVnaW4KaW50Y18yIC8vIGF4ZmVyCml0eG5fZmllbGQgVHlwZUVudW0KaW50Y18wIC8vIDAKaXR4bl9maWVsZCBGZWUKYnl0ZWNfMSAvLyAiYXNhIgphcHBfZ2xvYmFsX2dldAppdHhuX2ZpZWxkIFhmZXJBc3NldApieXRlYyA0IC8vICJhc2FfYW10IgphcHBfZ2xvYmFsX2dldAppdHhuX2ZpZWxkIEFzc2V0QW1vdW50CmJ5dGVjXzIgLy8gImhpZ2hlc3RfYmlkZGVyIgphcHBfZ2xvYmFsX2dldAppdHhuX2ZpZWxkIEFzc2V0UmVjZWl2ZXIKZnJhbWVfZGlnIC0xCnR4bmFzIEFjY291bnRzCml0eG5fZmllbGQgQXNzZXRDbG9zZVRvCml0eG5fc3VibWl0CnJldHN1YgoKLy8gZGVsZXRlCmRlbGV0ZV83Ogpwcm90byAwIDAKaXR4bl9iZWdpbgppbnRjXzEgLy8gcGF5Cml0eG5fZmllbGQgVHlwZUVudW0KaW50Y18wIC8vIDAKaXR4bl9maWVsZCBGZWUKZ2xvYmFsIENyZWF0b3JBZGRyZXNzCml0eG5fZmllbGQgUmVjZWl2ZXIKZ2xvYmFsIENyZWF0b3JBZGRyZXNzCml0eG5fZmllbGQgQ2xvc2VSZW1haW5kZXJUbwppbnRjXzAgLy8gMAppdHhuX2ZpZWxkIEFtb3VudAppdHhuX3N1Ym1pdApyZXRzdWIKCi8vIG9wdF9pbnRvX2Fzc2V0X2Nhc3RlcgpvcHRpbnRvYXNzZXRjYXN0ZXJfODoKcHJvdG8gMCAwCmludGNfMCAvLyAwCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKaW50Y18wIC8vIDAKZ2V0Ynl0ZQpmcmFtZV9idXJ5IDAKZnJhbWVfZGlnIDAKY2FsbHN1YiBvcHRpbnRvYXNzZXRfMQpyZXRzdWIKCi8vIHN0YXJ0X2F1Y3Rpb25fY2FzdGVyCnN0YXJ0YXVjdGlvbmNhc3Rlcl85Ogpwcm90byAwIDAKaW50Y18wIC8vIDAKZHVwbiAyCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKYnRvaQpmcmFtZV9idXJ5IDAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMgpidG9pCmZyYW1lX2J1cnkgMQp0eG4gR3JvdXBJbmRleAppbnRjXzEgLy8gMQotCmZyYW1lX2J1cnkgMgpmcmFtZV9kaWcgMgpndHhucyBUeXBlRW51bQppbnRjXzIgLy8gYXhmZXIKPT0KYXNzZXJ0CmZyYW1lX2RpZyAwCmZyYW1lX2RpZyAxCmZyYW1lX2RpZyAyCmNhbGxzdWIgc3RhcnRhdWN0aW9uXzIKcmV0c3ViCgovLyBiaWRfY2FzdGVyCmJpZGNhc3Rlcl8xMDoKcHJvdG8gMCAwCmludGNfMCAvLyAwCmR1cAp0eG5hIEFwcGxpY2F0aW9uQXJncyAxCmludGNfMCAvLyAwCmdldGJ5dGUKZnJhbWVfYnVyeSAxCnR4biBHcm91cEluZGV4CmludGNfMSAvLyAxCi0KZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCmd0eG5zIFR5cGVFbnVtCmludGNfMSAvLyBwYXkKPT0KYXNzZXJ0CmZyYW1lX2RpZyAwCmZyYW1lX2RpZyAxCmNhbGxzdWIgYmlkXzQKcmV0c3ViCgovLyBjbGFpbV9iaWRfY2FzdGVyCmNsYWltYmlkY2FzdGVyXzExOgpwcm90byAwIDAKY2FsbHN1YiBjbGFpbWJpZF81CnJldHN1YgoKLy8gY2xhaW1fYXNzZXRfY2FzdGVyCmNsYWltYXNzZXRjYXN0ZXJfMTI6CnByb3RvIDAgMAppbnRjXzAgLy8gMApkdXAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQppbnRjXzAgLy8gMApnZXRieXRlCmZyYW1lX2J1cnkgMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAyCmludGNfMCAvLyAwCmdldGJ5dGUKZnJhbWVfYnVyeSAxCmZyYW1lX2RpZyAwCmZyYW1lX2RpZyAxCmNhbGxzdWIgY2xhaW1hc3NldF82CnJldHN1YgoKLy8gZGVsZXRlX2Nhc3RlcgpkZWxldGVjYXN0ZXJfMTM6CnByb3RvIDAgMApjYWxsc3ViIGRlbGV0ZV83CnJldHN1Yg==",
+    "approval": "I3ByYWdtYSB2ZXJzaW9uIDgKaW50Y2Jsb2NrIDAgMSA0CmJ5dGVjYmxvY2sgMHg2MTczNjEgMHg3MDcyNjU3NjY5NmY3NTczNWY2MjY5NjQgMHg3MDcyNjU3NjY5NmY3NTczNWY2MjY5NjQ2NDY1NzIgMHg2MzZjNjE2OTZkNjE2MjZjNjU1ZjYxNmQ2Zjc1NmU3NCAweDYxNzU2Mzc0Njk2ZjZlNWY2NTZlNjQgMHg2MTczNjE1ZjYxNmQ3NAp0eG4gTnVtQXBwQXJncwppbnRjXzAgLy8gMAo9PQpibnogbWFpbl9sMTQKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHgyODI2YjIwMiAvLyAib3B0X2ludG9fYXNzZXQoYXNzZXQpdm9pZCIKPT0KYm56IG1haW5fbDEzCnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4ZjBhYTcwMjMgLy8gInN0YXJ0X2F1Y3Rpb24odWludDY0LHVpbnQ2NCxheGZlcil2b2lkIgo9PQpibnogbWFpbl9sMTIKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHhkYjdmZTg0MyAvLyAiYmlkKHBheSl2b2lkIgo9PQpibnogbWFpbl9sMTEKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHhlNjU0NjI1YiAvLyAiY2xhaW1fYmlkcygpdm9pZCIKPT0KYm56IG1haW5fbDEwCnR4bmEgQXBwbGljYXRpb25BcmdzIDAKcHVzaGJ5dGVzIDB4YzkwMTI4MzEgLy8gImNsYWltX2Fzc2V0KGFzc2V0LGFjY291bnQpdm9pZCIKPT0KYm56IG1haW5fbDkKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMApwdXNoYnl0ZXMgMHgyNDM3OGQzYyAvLyAiZGVsZXRlKCl2b2lkIgo9PQpibnogbWFpbl9sOAplcnIKbWFpbl9sODoKdHhuIE9uQ29tcGxldGlvbgpwdXNoaW50IDUgLy8gRGVsZXRlQXBwbGljYXRpb24KPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgZGVsZXRlY2FzdGVyXzE0CmludGNfMSAvLyAxCnJldHVybgptYWluX2w5Ogp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIGNsYWltYXNzZXRjYXN0ZXJfMTMKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDEwOgp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIGNsYWltYmlkc2Nhc3Rlcl8xMgppbnRjXzEgLy8gMQpyZXR1cm4KbWFpbl9sMTE6CnR4biBPbkNvbXBsZXRpb24KaW50Y18wIC8vIE5vT3AKPT0KdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KJiYKYXNzZXJ0CmNhbGxzdWIgYmlkY2FzdGVyXzExCmludGNfMSAvLyAxCnJldHVybgptYWluX2wxMjoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQp0eG4gQXBwbGljYXRpb25JRAppbnRjXzAgLy8gMAohPQomJgphc3NlcnQKY2FsbHN1YiBzdGFydGF1Y3Rpb25jYXN0ZXJfMTAKaW50Y18xIC8vIDEKcmV0dXJuCm1haW5fbDEzOgp0eG4gT25Db21wbGV0aW9uCmludGNfMCAvLyBOb09wCj09CnR4biBBcHBsaWNhdGlvbklECmludGNfMCAvLyAwCiE9CiYmCmFzc2VydApjYWxsc3ViIG9wdGludG9hc3NldGNhc3Rlcl85CmludGNfMSAvLyAxCnJldHVybgptYWluX2wxNDoKdHhuIE9uQ29tcGxldGlvbgppbnRjXzAgLy8gTm9PcAo9PQpibnogbWFpbl9sMTgKdHhuIE9uQ29tcGxldGlvbgppbnRjXzEgLy8gT3B0SW4KPT0KYm56IG1haW5fbDE3CmVycgptYWluX2wxNzoKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKIT0KYXNzZXJ0CmNhbGxzdWIgb3B0aW50b2FwcF80CmludGNfMSAvLyAxCnJldHVybgptYWluX2wxODoKdHhuIEFwcGxpY2F0aW9uSUQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmNhbGxzdWIgY3JlYXRlXzAKaW50Y18xIC8vIDEKcmV0dXJuCgovLyBjcmVhdGUKY3JlYXRlXzA6CnByb3RvIDAgMApieXRlY18wIC8vICJhc2EiCmludGNfMCAvLyAwCmFwcF9nbG9iYWxfcHV0CmJ5dGVjIDUgLy8gImFzYV9hbXQiCmludGNfMCAvLyAwCmFwcF9nbG9iYWxfcHV0CmJ5dGVjIDQgLy8gImF1Y3Rpb25fZW5kIgppbnRjXzAgLy8gMAphcHBfZ2xvYmFsX3B1dApieXRlY18xIC8vICJwcmV2aW91c19iaWQiCmludGNfMCAvLyAwCmFwcF9nbG9iYWxfcHV0CmJ5dGVjXzIgLy8gInByZXZpb3VzX2JpZGRlciIKcHVzaGJ5dGVzIDB4IC8vICIiCmFwcF9nbG9iYWxfcHV0CnJldHN1YgoKLy8gb3B0X2ludG9fYXNzZXQKb3B0aW50b2Fzc2V0XzE6CnByb3RvIDEgMAp0eG4gU2VuZGVyCmdsb2JhbCBDcmVhdG9yQWRkcmVzcwo9PQovLyB1bmF1dGhvcml6ZWQKYXNzZXJ0CmJ5dGVjXzAgLy8gImFzYSIKYXBwX2dsb2JhbF9nZXQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmJ5dGVjXzAgLy8gImFzYSIKZnJhbWVfZGlnIC0xCnR4bmFzIEFzc2V0cwphcHBfZ2xvYmFsX3B1dAppdHhuX2JlZ2luCmludGNfMiAvLyBheGZlcgppdHhuX2ZpZWxkIFR5cGVFbnVtCmludGNfMCAvLyAwCml0eG5fZmllbGQgRmVlCmdsb2JhbCBDdXJyZW50QXBwbGljYXRpb25BZGRyZXNzCml0eG5fZmllbGQgQXNzZXRSZWNlaXZlcgpmcmFtZV9kaWcgLTEKdHhuYXMgQXNzZXRzCml0eG5fZmllbGQgWGZlckFzc2V0CmludGNfMCAvLyAwCml0eG5fZmllbGQgQXNzZXRBbW91bnQKaXR4bl9zdWJtaXQKcmV0c3ViCgovLyBzdGFydF9hdWN0aW9uCnN0YXJ0YXVjdGlvbl8yOgpwcm90byAzIDAKdHhuIFNlbmRlcgpnbG9iYWwgQ3JlYXRvckFkZHJlc3MKPT0KLy8gdW5hdXRob3JpemVkCmFzc2VydApieXRlYyA0IC8vICJhdWN0aW9uX2VuZCIKYXBwX2dsb2JhbF9nZXQKaW50Y18wIC8vIDAKPT0KYXNzZXJ0CmZyYW1lX2RpZyAtMQpndHhucyBBc3NldFJlY2VpdmVyCmdsb2JhbCBDdXJyZW50QXBwbGljYXRpb25BZGRyZXNzCj09CmFzc2VydApmcmFtZV9kaWcgLTEKZ3R4bnMgWGZlckFzc2V0CmJ5dGVjXzAgLy8gImFzYSIKYXBwX2dsb2JhbF9nZXQKPT0KYXNzZXJ0CmJ5dGVjIDUgLy8gImFzYV9hbXQiCmZyYW1lX2RpZyAtMQpndHhucyBBc3NldEFtb3VudAphcHBfZ2xvYmFsX3B1dApieXRlYyA0IC8vICJhdWN0aW9uX2VuZCIKZ2xvYmFsIExhdGVzdFRpbWVzdGFtcApmcmFtZV9kaWcgLTIKKwphcHBfZ2xvYmFsX3B1dApieXRlY18xIC8vICJwcmV2aW91c19iaWQiCmZyYW1lX2RpZyAtMwphcHBfZ2xvYmFsX3B1dApyZXRzdWIKCi8vIHBheQpwYXlfMzoKcHJvdG8gMiAwCml0eG5fYmVnaW4KaW50Y18xIC8vIHBheQppdHhuX2ZpZWxkIFR5cGVFbnVtCmZyYW1lX2RpZyAtMgppdHhuX2ZpZWxkIFJlY2VpdmVyCmZyYW1lX2RpZyAtMQppdHhuX2ZpZWxkIEFtb3VudAppbnRjXzAgLy8gMAppdHhuX2ZpZWxkIEZlZQppdHhuX3N1Ym1pdApyZXRzdWIKCi8vIG9wdF9pbnRvX2FwcApvcHRpbnRvYXBwXzQ6CnByb3RvIDAgMAp0eG4gU2VuZGVyCmJ5dGVjXzMgLy8gImNsYWltYWJsZV9hbW91bnQiCmludGNfMCAvLyAwCmFwcF9sb2NhbF9wdXQKcmV0c3ViCgovLyBiaWQKYmlkXzU6CnByb3RvIDEgMApnbG9iYWwgTGF0ZXN0VGltZXN0YW1wCmJ5dGVjIDQgLy8gImF1Y3Rpb25fZW5kIgphcHBfZ2xvYmFsX2dldAo8CmFzc2VydApmcmFtZV9kaWcgLTEKZ3R4bnMgQW1vdW50CmJ5dGVjXzEgLy8gInByZXZpb3VzX2JpZCIKYXBwX2dsb2JhbF9nZXQKPgphc3NlcnQKZnJhbWVfZGlnIC0xCmd0eG5zIFNlbmRlcgp0eG4gU2VuZGVyCj09CmFzc2VydApmcmFtZV9kaWcgLTEKZ3R4bnMgUmVjZWl2ZXIKZ2xvYmFsIEN1cnJlbnRBcHBsaWNhdGlvbkFkZHJlc3MKPT0KYXNzZXJ0CnR4biBTZW5kZXIKYnl0ZWNfMyAvLyAiY2xhaW1hYmxlX2Ftb3VudCIKdHhuIFNlbmRlcgpieXRlY18zIC8vICJjbGFpbWFibGVfYW1vdW50IgphcHBfbG9jYWxfZ2V0CmZyYW1lX2RpZyAtMQpndHhucyBBbW91bnQKKwphcHBfbG9jYWxfcHV0CmJ5dGVjXzEgLy8gInByZXZpb3VzX2JpZCIKZnJhbWVfZGlnIC0xCmd0eG5zIEFtb3VudAphcHBfZ2xvYmFsX3B1dApieXRlY18yIC8vICJwcmV2aW91c19iaWRkZXIiCmZyYW1lX2RpZyAtMQpndHhucyBTZW5kZXIKYXBwX2dsb2JhbF9wdXQKcmV0c3ViCgovLyBjbGFpbV9iaWRzCmNsYWltYmlkc182Ogpwcm90byAwIDAKdHhuIFNlbmRlcgpieXRlY18yIC8vICJwcmV2aW91c19iaWRkZXIiCmFwcF9nbG9iYWxfZ2V0Cj09CmJueiBjbGFpbWJpZHNfNl9sMgp0eG4gU2VuZGVyCnR4biBTZW5kZXIKYnl0ZWNfMyAvLyAiY2xhaW1hYmxlX2Ftb3VudCIKYXBwX2xvY2FsX2dldApjYWxsc3ViIHBheV8zCmIgY2xhaW1iaWRzXzZfbDMKY2xhaW1iaWRzXzZfbDI6CnR4biBTZW5kZXIKdHhuIFNlbmRlcgpieXRlY18zIC8vICJjbGFpbWFibGVfYW1vdW50IgphcHBfbG9jYWxfZ2V0CmJ5dGVjXzEgLy8gInByZXZpb3VzX2JpZCIKYXBwX2dsb2JhbF9nZXQKLQpjYWxsc3ViIHBheV8zCmNsYWltYmlkc182X2wzOgpyZXRzdWIKCi8vIGNsYWltX2Fzc2V0CmNsYWltYXNzZXRfNzoKcHJvdG8gMiAwCml0eG5fYmVnaW4KaW50Y18yIC8vIGF4ZmVyCml0eG5fZmllbGQgVHlwZUVudW0KaW50Y18wIC8vIDAKaXR4bl9maWVsZCBGZWUKYnl0ZWNfMCAvLyAiYXNhIgphcHBfZ2xvYmFsX2dldAppdHhuX2ZpZWxkIFhmZXJBc3NldApieXRlYyA1IC8vICJhc2FfYW10IgphcHBfZ2xvYmFsX2dldAppdHhuX2ZpZWxkIEFzc2V0QW1vdW50CmJ5dGVjXzIgLy8gInByZXZpb3VzX2JpZGRlciIKYXBwX2dsb2JhbF9nZXQKaXR4bl9maWVsZCBBc3NldFJlY2VpdmVyCmJ5dGVjXzIgLy8gInByZXZpb3VzX2JpZGRlciIKYXBwX2dsb2JhbF9nZXQKaXR4bl9maWVsZCBBc3NldENsb3NlVG8KaXR4bl9zdWJtaXQKcmV0c3ViCgovLyBkZWxldGUKZGVsZXRlXzg6CnByb3RvIDAgMAppdHhuX2JlZ2luCmludGNfMSAvLyBwYXkKaXR4bl9maWVsZCBUeXBlRW51bQppbnRjXzAgLy8gMAppdHhuX2ZpZWxkIEZlZQpnbG9iYWwgQ3JlYXRvckFkZHJlc3MKaXR4bl9maWVsZCBSZWNlaXZlcgpnbG9iYWwgQ3JlYXRvckFkZHJlc3MKaXR4bl9maWVsZCBDbG9zZVJlbWFpbmRlclRvCmludGNfMCAvLyAwCml0eG5fZmllbGQgQW1vdW50Cml0eG5fc3VibWl0CnJldHN1YgoKLy8gb3B0X2ludG9fYXNzZXRfY2FzdGVyCm9wdGludG9hc3NldGNhc3Rlcl85Ogpwcm90byAwIDAKaW50Y18wIC8vIDAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQppbnRjXzAgLy8gMApnZXRieXRlCmZyYW1lX2J1cnkgMApmcmFtZV9kaWcgMApjYWxsc3ViIG9wdGludG9hc3NldF8xCnJldHN1YgoKLy8gc3RhcnRfYXVjdGlvbl9jYXN0ZXIKc3RhcnRhdWN0aW9uY2FzdGVyXzEwOgpwcm90byAwIDAKaW50Y18wIC8vIDAKZHVwbiAyCnR4bmEgQXBwbGljYXRpb25BcmdzIDEKYnRvaQpmcmFtZV9idXJ5IDAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMgpidG9pCmZyYW1lX2J1cnkgMQp0eG4gR3JvdXBJbmRleAppbnRjXzEgLy8gMQotCmZyYW1lX2J1cnkgMgpmcmFtZV9kaWcgMgpndHhucyBUeXBlRW51bQppbnRjXzIgLy8gYXhmZXIKPT0KYXNzZXJ0CmZyYW1lX2RpZyAwCmZyYW1lX2RpZyAxCmZyYW1lX2RpZyAyCmNhbGxzdWIgc3RhcnRhdWN0aW9uXzIKcmV0c3ViCgovLyBiaWRfY2FzdGVyCmJpZGNhc3Rlcl8xMToKcHJvdG8gMCAwCmludGNfMCAvLyAwCnR4biBHcm91cEluZGV4CmludGNfMSAvLyAxCi0KZnJhbWVfYnVyeSAwCmZyYW1lX2RpZyAwCmd0eG5zIFR5cGVFbnVtCmludGNfMSAvLyBwYXkKPT0KYXNzZXJ0CmZyYW1lX2RpZyAwCmNhbGxzdWIgYmlkXzUKcmV0c3ViCgovLyBjbGFpbV9iaWRzX2Nhc3RlcgpjbGFpbWJpZHNjYXN0ZXJfMTI6CnByb3RvIDAgMApjYWxsc3ViIGNsYWltYmlkc182CnJldHN1YgoKLy8gY2xhaW1fYXNzZXRfY2FzdGVyCmNsYWltYXNzZXRjYXN0ZXJfMTM6CnByb3RvIDAgMAppbnRjXzAgLy8gMApkdXAKdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQppbnRjXzAgLy8gMApnZXRieXRlCmZyYW1lX2J1cnkgMAp0eG5hIEFwcGxpY2F0aW9uQXJncyAyCmludGNfMCAvLyAwCmdldGJ5dGUKZnJhbWVfYnVyeSAxCmZyYW1lX2RpZyAwCmZyYW1lX2RpZyAxCmNhbGxzdWIgY2xhaW1hc3NldF83CnJldHN1YgoKLy8gZGVsZXRlX2Nhc3RlcgpkZWxldGVjYXN0ZXJfMTQ6CnByb3RvIDAgMApjYWxsc3ViIGRlbGV0ZV84CnJldHN1Yg==",
     "clear": "I3ByYWdtYSB2ZXJzaW9uIDgKcHVzaGludCAwIC8vIDAKcmV0dXJu"
   },
   "state": {
@@ -68,7 +68,7 @@ export const APP_SPEC: AppSpec = {
     },
     "local": {
       "num_byte_slices": 0,
-      "num_uints": 0
+      "num_uints": 1
     }
   },
   "schema": {
@@ -89,21 +89,27 @@ export const APP_SPEC: AppSpec = {
           "key": "auction_end",
           "descr": "Timestamp of the end of the auction"
         },
-        "highest_bid": {
+        "previous_bid": {
           "type": "uint64",
-          "key": "highest_bid",
+          "key": "previous_bid",
           "descr": "Amount of the highest bid (uALGO)"
         },
-        "highest_bidder": {
+        "previous_bidder": {
           "type": "bytes",
-          "key": "highest_bidder",
+          "key": "previous_bidder",
           "descr": "Address of the highest bidder"
         }
       },
       "reserved": {}
     },
     "local": {
-      "declared": {},
+      "declared": {
+        "claimable_amount": {
+          "type": "uint64",
+          "key": "claimable_amount",
+          "descr": "Amount this account can claim"
+        }
+      },
       "reserved": {}
     }
   },
@@ -148,10 +154,6 @@ export const APP_SPEC: AppSpec = {
           {
             "type": "pay",
             "name": "payment"
-          },
-          {
-            "type": "account",
-            "name": "previous_bidder"
           }
         ],
         "returns": {
@@ -159,7 +161,7 @@ export const APP_SPEC: AppSpec = {
         }
       },
       {
-        "name": "claim_bid",
+        "name": "claim_bids",
         "args": [],
         "returns": {
           "type": "void"
@@ -192,7 +194,8 @@ export const APP_SPEC: AppSpec = {
     "networks": {}
   },
   "bare_call_config": {
-    "no_op": "CREATE"
+    "no_op": "CREATE",
+    "opt_in": "CALL"
   }
 }
 
@@ -267,15 +270,14 @@ export type Auction = {
       argsTuple: [starting_price: bigint | number, length: bigint | number, axfer: TransactionToSign | Transaction | Promise<SendTransactionResult>]
       returns: void
     }>
-    & Record<'bid(pay,account)void' | 'bid', {
+    & Record<'bid(pay)void' | 'bid', {
       argsObj: {
         payment: TransactionToSign | Transaction | Promise<SendTransactionResult>
-        previous_bidder: string | Uint8Array
       }
-      argsTuple: [payment: TransactionToSign | Transaction | Promise<SendTransactionResult>, previous_bidder: string | Uint8Array]
+      argsTuple: [payment: TransactionToSign | Transaction | Promise<SendTransactionResult>]
       returns: void
     }>
-    & Record<'claim_bid()void' | 'claim_bid', {
+    & Record<'claim_bids()void' | 'claim_bids', {
       argsObj: {
       }
       argsTuple: []
@@ -315,11 +317,17 @@ export type Auction = {
       /**
        * Amount of the highest bid (uALGO)
        */
-      'highest_bid'?: IntegerState
+      'previous_bid'?: IntegerState
       /**
        * Address of the highest bidder
        */
-      'highest_bidder'?: BinaryState
+      'previous_bidder'?: BinaryState
+    }
+    local: {
+      /**
+       * Amount this account can claim
+       */
+      'claimable_amount'?: IntegerState
     }
   }
 }
@@ -429,6 +437,27 @@ export abstract class AuctionCallFactory {
   }
 
   /**
+   * Gets available optIn call factories
+   */
+  static get optIn() {
+    return {
+      /**
+       * Constructs an opt in call for the Auction smart contract using a bare call
+       *
+       * @param params Any parameters for the call
+       * @returns A TypedCallParams object for the call
+       */
+      bare(params: BareCallArgs & AppClientCallCoreParams & CoreAppCallArgs = {}) {
+        return {
+          method: undefined,
+          methodArgs: undefined,
+          ...params,
+        }
+      },
+    }
+  }
+
+  /**
    * Constructs a no op call for the opt_into_asset(asset)void ABI method
    *
    * @param args Any args for the contract call
@@ -457,29 +486,29 @@ export abstract class AuctionCallFactory {
     }
   }
   /**
-   * Constructs a no op call for the bid(pay,account)void ABI method
+   * Constructs a no op call for the bid(pay)void ABI method
    *
    * @param args Any args for the contract call
    * @param params Any additional parameters for the call
    * @returns A TypedCallParams object for the call
    */
-  static bid(args: MethodArgs<'bid(pay,account)void'>, params: AppClientCallCoreParams & CoreAppCallArgs) {
+  static bid(args: MethodArgs<'bid(pay)void'>, params: AppClientCallCoreParams & CoreAppCallArgs) {
     return {
-      method: 'bid(pay,account)void' as const,
-      methodArgs: Array.isArray(args) ? args : [args.payment, args.previous_bidder],
+      method: 'bid(pay)void' as const,
+      methodArgs: Array.isArray(args) ? args : [args.payment],
       ...params,
     }
   }
   /**
-   * Constructs a no op call for the claim_bid()void ABI method
+   * Constructs a no op call for the claim_bids()void ABI method
    *
    * @param args Any args for the contract call
    * @param params Any additional parameters for the call
    * @returns A TypedCallParams object for the call
    */
-  static claimBid(args: MethodArgs<'claim_bid()void'>, params: AppClientCallCoreParams & CoreAppCallArgs) {
+  static claimBids(args: MethodArgs<'claim_bids()void'>, params: AppClientCallCoreParams & CoreAppCallArgs) {
     return {
-      method: 'claim_bid()void' as const,
+      method: 'claim_bids()void' as const,
       methodArgs: Array.isArray(args) ? args : [],
       ...params,
     }
@@ -608,6 +637,24 @@ export class AuctionClient {
   }
 
   /**
+   * Gets available optIn methods
+   */
+  public get optIn() {
+    const $this = this
+    return {
+      /**
+       * Opts the user into an existing instance of the Auction smart contract using a bare call.
+       *
+       * @param args The arguments for the bare call
+       * @returns The optIn result
+       */
+      bare(args: BareCallArgs & AppClientCallCoreParams & CoreAppCallArgs = {}): Promise<AppCallTransactionResultOfType<undefined>> {
+        return $this.appClient.optIn(args) as unknown as Promise<AppCallTransactionResultOfType<undefined>>
+      },
+    }
+  }
+
+  /**
    * Makes a clear_state call to an existing instance of the Auction smart contract.
    *
    * @param args The arguments for the bare call
@@ -640,25 +687,25 @@ export class AuctionClient {
   }
 
   /**
-   * Calls the bid(pay,account)void ABI method.
+   * Calls the bid(pay)void ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The result of the call
    */
-  public bid(args: MethodArgs<'bid(pay,account)void'>, params: AppClientCallCoreParams & CoreAppCallArgs = {}) {
+  public bid(args: MethodArgs<'bid(pay)void'>, params: AppClientCallCoreParams & CoreAppCallArgs = {}) {
     return this.call(AuctionCallFactory.bid(args, params))
   }
 
   /**
-   * Calls the claim_bid()void ABI method.
+   * Calls the claim_bids()void ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The result of the call
    */
-  public claimBid(args: MethodArgs<'claim_bid()void'>, params: AppClientCallCoreParams & CoreAppCallArgs = {}) {
-    return this.call(AuctionCallFactory.claimBid(args, params))
+  public claimBids(args: MethodArgs<'claim_bids()void'>, params: AppClientCallCoreParams & CoreAppCallArgs = {}) {
+    return this.call(AuctionCallFactory.claimBids(args, params))
   }
 
   /**
@@ -731,11 +778,25 @@ export class AuctionClient {
       get auction_end() {
         return AuctionClient.getIntegerState(state, 'auction_end')
       },
-      get highest_bid() {
-        return AuctionClient.getIntegerState(state, 'highest_bid')
+      get previous_bid() {
+        return AuctionClient.getIntegerState(state, 'previous_bid')
       },
-      get highest_bidder() {
-        return AuctionClient.getBinaryState(state, 'highest_bidder')
+      get previous_bidder() {
+        return AuctionClient.getBinaryState(state, 'previous_bidder')
+      },
+    }
+  }
+
+  /**
+   * Returns the smart contract's local state wrapped in a strongly typed accessor with options to format the stored value
+   *
+   * @param account The address of the account for which to read local state from
+   */
+  public async getLocalState(account: string | SendTransactionFrom): Promise<Auction['state']['local']> {
+    const state = await this.appClient.getLocalState(account)
+    return {
+      get claimable_amount() {
+        return AuctionClient.getIntegerState(state, 'claimable_amount')
       },
     }
   }
@@ -756,13 +817,13 @@ export class AuctionClient {
         resultMappers.push(undefined)
         return this
       },
-      bid(args: MethodArgs<'bid(pay,account)void'>, params?: AppClientCallCoreParams & CoreAppCallArgs) {
+      bid(args: MethodArgs<'bid(pay)void'>, params?: AppClientCallCoreParams & CoreAppCallArgs) {
         promiseChain = promiseChain.then(() => client.bid(args, {...params, sendParams: {...params?.sendParams, skipSending: true, atc}}))
         resultMappers.push(undefined)
         return this
       },
-      claimBid(args: MethodArgs<'claim_bid()void'>, params?: AppClientCallCoreParams & CoreAppCallArgs) {
-        promiseChain = promiseChain.then(() => client.claimBid(args, {...params, sendParams: {...params?.sendParams, skipSending: true, atc}}))
+      claimBids(args: MethodArgs<'claim_bids()void'>, params?: AppClientCallCoreParams & CoreAppCallArgs) {
+        promiseChain = promiseChain.then(() => client.claimBids(args, {...params, sendParams: {...params?.sendParams, skipSending: true, atc}}))
         resultMappers.push(undefined)
         return this
       },
@@ -776,6 +837,16 @@ export class AuctionClient {
         return {
           delete(args: MethodArgs<'delete()void'>, params?: AppClientCallCoreParams) {
             promiseChain = promiseChain.then(() => client.delete.delete(args, {...params, sendParams: {...params?.sendParams, skipSending: true, atc}}))
+            resultMappers.push(undefined)
+            return $this
+          },
+        }
+      },
+      get optIn() {
+        const $this = this
+        return {
+          bare(args?: BareCallArgs & AppClientCallCoreParams & CoreAppCallArgs) {
+            promiseChain = promiseChain.then(() => client.optIn.bare({...args, sendParams: {...args?.sendParams, skipSending: true, atc}}))
             resultMappers.push(undefined)
             return $this
           },
@@ -825,22 +896,22 @@ export type AuctionComposer<TReturns extends [...any[]] = []> = {
   startAuction(args: MethodArgs<'start_auction(uint64,uint64,axfer)void'>, params?: AppClientCallCoreParams & CoreAppCallArgs): AuctionComposer<[...TReturns, MethodReturn<'start_auction(uint64,uint64,axfer)void'>]>
 
   /**
-   * Calls the bid(pay,account)void ABI method.
+   * Calls the bid(pay)void ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  bid(args: MethodArgs<'bid(pay,account)void'>, params?: AppClientCallCoreParams & CoreAppCallArgs): AuctionComposer<[...TReturns, MethodReturn<'bid(pay,account)void'>]>
+  bid(args: MethodArgs<'bid(pay)void'>, params?: AppClientCallCoreParams & CoreAppCallArgs): AuctionComposer<[...TReturns, MethodReturn<'bid(pay)void'>]>
 
   /**
-   * Calls the claim_bid()void ABI method.
+   * Calls the claim_bids()void ABI method.
    *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
-  claimBid(args: MethodArgs<'claim_bid()void'>, params?: AppClientCallCoreParams & CoreAppCallArgs): AuctionComposer<[...TReturns, MethodReturn<'claim_bid()void'>]>
+  claimBids(args: MethodArgs<'claim_bids()void'>, params?: AppClientCallCoreParams & CoreAppCallArgs): AuctionComposer<[...TReturns, MethodReturn<'claim_bids()void'>]>
 
   /**
    * Calls the claim_asset(asset,account)void ABI method.
@@ -863,6 +934,19 @@ export type AuctionComposer<TReturns extends [...any[]] = []> = {
      * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
      */
     delete(args: MethodArgs<'delete()void'>, params?: AppClientCallCoreParams): AuctionComposer<[...TReturns, MethodReturn<'delete()void'>]>
+  }
+
+  /**
+   * Gets available optIn methods
+   */
+  readonly optIn: {
+    /**
+     * Opts the user into an existing instance of the Auction smart contract using a bare call.
+     *
+     * @param args The arguments for the bare call
+     * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
+     */
+    bare(args?: BareCallArgs & AppClientCallCoreParams & CoreAppCallArgs): AuctionComposer<[...TReturns, undefined]>
   }
 
   /**

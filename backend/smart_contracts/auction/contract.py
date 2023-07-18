@@ -33,6 +33,12 @@ class AuctionState:
         descr="ID of the ASA being auctioned",
     )
 
+    claimable_amount = beaker.LocalStateValue(
+        stack_type=pt.TealType.uint64,
+        default=pt.Int(0),
+        descr="Amount this account can claim"
+    )
+
 
 app = beaker.Application("Auction", state=AuctionState)
 
@@ -94,9 +100,12 @@ def pay(receiver: pt.Expr, amount: pt.Expr) -> pt.Expr:
         }
     )
 
+@app.opt_in(bare=True)
+def opt_into_app():
+    return app.state.claimable_amount[pt.Txn.sender()].set_default()
 
 @app.external
-def bid(payment: pt.abi.PaymentTransaction, previous_bidder: pt.abi.Account) -> pt.Expr:
+def bid(payment: pt.abi.PaymentTransaction) -> pt.Expr:
     return pt.Seq(
         # Ensure auction hasn't ended
         pt.Assert(pt.Global.latest_timestamp() < app.state.auction_end.get()),
@@ -104,10 +113,8 @@ def bid(payment: pt.abi.PaymentTransaction, previous_bidder: pt.abi.Account) -> 
         pt.Assert(payment.get().amount() > app.state.previous_bid.get()),
         pt.Assert(pt.Txn.sender() == payment.get().sender()),
         pt.Assert(payment.get().receiver() == pt.Global.current_application_address()),
-        # Return previous bid if there was one
-        pt.If(
-            app.state.previous_bidder.get() != pt.Bytes(""),
-            pay(app.state.previous_bidder.get(), app.state.previous_bid.get()),
+        app.state.claimable_amount[pt.Txn.sender()].set(
+            app.state.claimable_amount[pt.Txn.sender()] + payment.get().amount()
         ),
         # Set global state
         app.state.previous_bid.set(payment.get().amount()),
@@ -116,19 +123,19 @@ def bid(payment: pt.abi.PaymentTransaction, previous_bidder: pt.abi.Account) -> 
 
 
 @app.external
-def claim_bid() -> pt.Expr:
+def claim_bids() -> pt.Expr:
+    claimable_amount = app.state.claimable_amount[pt.Txn.sender()]
     return pt.Seq(
-        # Auction end check is commented out for automated testing
-        # pt.Assert(pt.Global.latest_timestamp() > app.state.auction_end.get()),
-        pay(pt.Global.creator_address(), app.state.previous_bid.get()),
+        pt.If(pt.Txn.sender() == app.state.previous_bidder.get()).
+        Then(pay(pt.Txn.sender(), claimable_amount - app.state.previous_bid.get())).
+        Else(pay(pt.Txn.sender(), claimable_amount))
     )
 
 
 @app.external
-def claim_asset(asset: pt.abi.Asset, close_to_account: pt.abi.Account) -> pt.Expr:
+def claim_asset(asset: pt.abi.Asset) -> pt.Expr:
     return pt.Seq(
-        # Auction end check is commented out for automated testing
-        # pt.Assert(pt.Global.latest_timestamp() > app.state.auction_end.get()),
+        pt.Assert(pt.Global.latest_timestamp() > app.state.auction_end.get()),
         # Send ASA to highest bidder
         pt.InnerTxnBuilder.Execute(
             {
@@ -137,7 +144,7 @@ def claim_asset(asset: pt.abi.Asset, close_to_account: pt.abi.Account) -> pt.Exp
                 pt.TxnField.xfer_asset: app.state.asa,
                 pt.TxnField.asset_amount: app.state.asa_amt,
                 pt.TxnField.asset_receiver: app.state.previous_bidder,
-                pt.TxnField.asset_close_to: close_to_account.address(),
+                pt.TxnField.asset_close_to: app.state.previous_bidder,
             }
         ),
     )
