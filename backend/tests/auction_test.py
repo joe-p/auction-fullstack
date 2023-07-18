@@ -22,13 +22,10 @@ def auction_client(
         algod_client,
         app_spec=auction_app_spec,
         signer=get_localnet_default_account(algod_client),
-        template_values={"UPDATABLE": 1, "DELETABLE": 1},
     )
     client.create()
     return client
 
 
-def test_says_hello(auction_client: ApplicationClient) -> None:
-    result = auction_client.call(auction_contract.hello, name="World")
-
-    assert result.return_value == "Hello, World"
+def test_create(auction_client: ApplicationClient) -> None:
+    pass
